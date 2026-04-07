@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sakshina Bhatt — Social Impact Consultant & Program Manager</title>
+  <meta name="description" content="Sakshina Bhatt — 9 years of driving evidence-based impact across global health, economic development, and social policy." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+  <style>
+    /* ── Reset & Tokens ──────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --slate-900: #1a1a1a;
+      --slate-800: #2d2a24;
+      --slate-700: #3d3930;
+      --slate-500: #6b6560;
+      --slate-400: #9a9490;
+      --slate-200: #e0dbd4;
+      --slate-100: #f0ebdf;
+      --slate-50:  #fdf8e8;
+      --indigo:    #8b6914;
+      --indigo-d:  #6d5210;
+      --indigo-l:  #d4b85a;
+      --emerald:   #5a7a3a;
+      --amber:     #c4930a;
+      --rose:      #b8584a;
+      --white:     #fffef9;
+      --radius:    12px;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,.06);
+      --shadow-md: 0 4px 20px rgba(0,0,0,.08);
+      --shadow-lg: 0 8px 40px rgba(0,0,0,.12);
+      --transition: .2s ease;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Source Serif 4', 'Georgia', 'Times New Roman', serif;
+      background: var(--slate-50);
+      color: var(--slate-700);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: var(--indigo); text-decoration: none; transition: color var(--transition); }
+    a:hover { color: var(--indigo-d); }
+
+    .container { max-width: 960px; margin: 0 auto; padding: 0 1.5rem; }
+
+    /* ── Navigation ──────────────────────────────────────────── */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      background: rgba(45, 42, 36, .94);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255,255,255,.06);
+    }
+
+    nav .inner {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: .85rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    nav .logo {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--white);
+      letter-spacing: -.01em;
+    }
+
+    nav .logo span { color: var(--indigo-l); }
+
+    nav .nav-links { display: flex; gap: 1.75rem; }
+
+    nav .nav-links a {
+      color: var(--slate-400);
+      font-size: .875rem;
+      font-weight: 500;
+      transition: color var(--transition);
+    }
+
+    nav .nav-links a:hover { color: var(--white); }
+
+    /* ── Hero ─────────────────────────────────────────────────── */
+    .hero {
+      background: linear-gradient(160deg, #2d2a24 0%, #3a3428 50%, #4a4030 100%);
+      color: var(--white);
+      padding: 10rem 0 5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -20%;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(212,184,90,.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero .container { position: relative; }
+
+    .hero .greeting {
+      font-size: .875rem;
+      font-weight: 600;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--indigo-l);
+      margin-bottom: .75rem;
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', 'Georgia', serif;
+      font-size: clamp(2.25rem, 5vw, 3.5rem);
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -.02em;
+      margin-bottom: 1.25rem;
+    }
+
+    .hero h1 .highlight {
+      background: linear-gradient(135deg, var(--indigo-l), var(--emerald));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero .bio {
+      font-size: 1.05rem;
+      color: var(--slate-400);
+      max-width: 680px;
+      margin-bottom: 2rem;
+      line-height: 1.75;
+    }
+
+    .hero .cta-row { display: flex; gap: .75rem; flex-wrap: wrap; }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      padding: .7rem 1.5rem;
+      border-radius: 8px;
+      font-size: .9rem;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      transition: all var(--transition);
+      text-decoration: none;
+    }
+
+    .btn:hover { transform: translateY(-1px); text-decoration: none; }
+
+    .btn-primary { background: var(--indigo); color: var(--white); }
+    .btn-primary:hover { background: var(--indigo-d); color: var(--white); }
+
+    .btn-ghost {
+      background: transparent;
+      color: var(--slate-400);
+      border: 1.5px solid var(--slate-700);
+    }
+
+    .btn-ghost:hover { border-color: var(--slate-500); color: var(--white); }
+
+    /* ── Section defaults ────────────────────────────────────── */
+    section { padding: 5rem 0; }
+
+    .section-label {
+      font-size: .8rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--indigo);
+      margin-bottom: .5rem;
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', 'Georgia', serif;
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: var(--slate-900);
+      letter-spacing: -.01em;
+      margin-bottom: 1rem;
+    }
+
+    .section-desc {
+      color: var(--slate-500);
+      max-width: 640px;
+      margin-bottom: 2.5rem;
+    }
+
+    /* ── Projects ─────────────────────────────────────────────── */
+    #projects { background: var(--white); }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    .project-card {
+      background: var(--slate-50);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      transition: box-shadow var(--transition), transform var(--transition);
+    }
+
+    .project-card:hover {
+      box-shadow: var(--shadow-lg);
+      transform: translateY(-2px);
+    }
+
+    .project-content { padding: 1.75rem; }
+
+    .project-tag {
+      display: inline-block;
+      font-size: .7rem;
+      font-weight: 700;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      padding: .25rem .6rem;
+      border-radius: 4px;
+      margin-bottom: .75rem;
+    }
+
+    .tag-indigo  { background: #eef2ff; color: var(--indigo); }
+    .tag-emerald { background: #ecfdf5; color: #059669; }
+    .tag-amber   { background: #fffbeb; color: #d97706; }
+    .tag-rose    { background: #fff1f2; color: #e11d48; }
+
+    .project-card h3 {
+      font-family: 'Playfair Display', 'Georgia', serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--slate-900);
+      margin-bottom: .5rem;
+    }
+
+    .project-card .desc {
+      color: var(--slate-500);
+      font-size: .92rem;
+      margin-bottom: 1.25rem;
+      line-height: 1.7;
+    }
+
+    .tech-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .4rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .tech-stack span {
+      font-size: .75rem;
+      font-weight: 600;
+      padding: .2rem .55rem;
+      border-radius: 4px;
+      background: var(--white);
+      color: var(--slate-700);
+      border: 1px solid var(--slate-200);
+    }
+
+    .project-links { display: flex; gap: .75rem; }
+
+    .project-links a {
+      font-size: .85rem;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: .35rem;
+    }
+
+    /* ── Skills ───────────────────────────────────────────────── */
+    #skills { background: var(--slate-50); }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .skill-group {
+      background: var(--white);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+    }
+
+    .skill-group h3 {
+      font-size: .95rem;
+      font-weight: 700;
+      color: var(--slate-900);
+      margin-bottom: .75rem;
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+    }
+
+    .skill-group .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      display: inline-block;
+    }
+
+    .dot-indigo  { background: var(--indigo); }
+    .dot-emerald { background: var(--emerald); }
+    .dot-amber   { background: var(--amber); }
+    .dot-rose    { background: var(--rose); }
+
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .4rem;
+    }
+
+    .skill-tags span {
+      font-size: .8rem;
+      padding: .3rem .65rem;
+      border-radius: 6px;
+      background: var(--slate-50);
+      border: 1px solid var(--slate-200);
+      color: var(--slate-700);
+    }
+
+    /* ── Contact ──────────────────────────────────────────────── */
+    #contact {
+      background: linear-gradient(160deg, #2d2a24, #3a3428);
+      color: var(--white);
+      text-align: center;
+      padding: 5rem 0;
+    }
+
+    #contact .section-label { color: var(--indigo-l); }
+    #contact .section-title { color: var(--white); }
+    #contact .section-desc { color: var(--slate-400); margin: 0 auto 2rem; }
+
+    .contact-links {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .contact-links .btn-ghost {
+      border-color: rgba(255,255,255,.15);
+      color: var(--slate-400);
+    }
+
+    .contact-links .btn-ghost:hover {
+      border-color: rgba(255,255,255,.3);
+      color: var(--white);
+    }
+
+    /* ── Footer ───────────────────────────────────────────────── */
+    footer {
+      background: #2d2a24;
+      border-top: 1px solid rgba(255,255,255,.08);
+      text-align: center;
+      padding: 1.5rem;
+      font-size: .8rem;
+      color: var(--slate-500);
+    }
+
+    /* ── Responsive ───────────────────────────────────────────── */
+    @media (max-width: 700px) {
+      .hero { padding: 8rem 0 4rem; }
+      .skills-grid { grid-template-columns: 1fr; }
+      nav .nav-links { gap: 1rem; }
+      nav .nav-links a { font-size: .8rem; }
+    }
+
+    @media (max-width: 480px) {
+      nav .nav-links { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── Navigation ──────────────────────────────────────────────── -->
+<nav>
+  <div class="inner">
+    <a href="#" class="logo">Sakshina Bhatt<span>.</span></a>
+    <div class="nav-links">
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ── Hero ─────────────────────────────────────────────────────── -->
+<header class="hero">
+  <div class="container">
+    <p class="greeting">Hello, I'm</p>
+    <h1>Sakshina Bhatt<br/><span class="highlight">Social Impact Consultant &amp; Program Manager</span></h1>
+    <p class="bio">
+      I have 9 years of driving evidence-based impact across global health, economic development, and social policy. I've led complex research portfolios at university-affiliated centers, a multilateral org, and impact-first consulting firms. My work spans maternal &amp; child health, agriculture, nutrition, workforce development, and service delivery for welfare programs.
+    </p>
+    <p class="bio">
+      My experience sits at the intersection of rigorous evidence and real-world program design. I've managed a multimillion-dollar federally-funded initiative linking complex health records to track intergenerational health outcomes, and executed impact evaluations for programs in low-and-middle-income countries. Over time, I've developed expertise in conducting cost-effectiveness analyses, mixed-methods research, and communicating academic findings into actionable strategy for government agencies and philanthropic partners.
+    </p>
+    <p class="bio">
+      I'm passionate about applying these skills to accelerate social impact &mdash; whether through implementation research, program evaluation, or strategic advisory &amp; technical assistance work that helps organizations allocate resources where they matter most.
+    </p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="#projects">View My Work</a>
+      <a class="btn btn-ghost" href="#contact">Get in Touch</a>
+    </div>
+  </div>
+</header>
+
+<!-- ── Projects ─────────────────────────────────────────────────── -->
+<section id="projects">
+  <div class="container">
+    <p class="section-label">Projects</p>
+    <h2 class="section-title">Selected work</h2>
+    <p class="section-desc">
+      Side projects where I build tools that make policy-relevant data more accessible and actionable.
+    </p>
+    <div class="project-grid">
+
+      <!-- Project: Workforce Pathways Navigator -->
+      <div class="project-card">
+        <div class="project-content">
+          <span class="project-tag tag-indigo">Workforce Development</span>
+          <h3>Workforce Pathways Navigator</h3>
+          <p class="desc">
+            An interactive tool that helps people facing employment barriers &mdash; justice involvement, limited education, immigration status, transportation challenges &mdash; discover realistic career pathways in AI-resilient occupations. A 6-step assessment wizard evaluates eligibility across 24+ skilled trades, healthcare, and high-demand occupations, accounting for conviction history, state licensing rules, drug screening, physical limitations, and financial constraints. Results include personalized remediation steps, state-specific policy guidance, funding sources (WIOA, Pell, apprenticeships), and AI automation risk scores.
+          </p>
+          <div class="tech-stack">
+            <span>JavaScript</span>
+            <span>Bootstrap 5</span>
+            <span>Eligibility Engine</span>
+            <span>State Policy Data (50 states)</span>
+            <span>AI Resilience Index</span>
+            <span>Fair Chance Licensing</span>
+          </div>
+          <div class="project-links">
+            <!-- TODO: Replace # with live URL when deployed -->
+            <a href="#">Live Demo &rarr;</a>
+            <a href="#">GitHub &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── Skills ───────────────────────────────────────────────────── -->
+<section id="skills">
+  <div class="container">
+    <p class="section-label">Skills</p>
+    <h2 class="section-title">Expertise &amp; competencies</h2>
+    <div class="skills-grid">
+
+      <div class="skill-group">
+        <h3><span class="dot dot-indigo"></span> Research & Evaluation</h3>
+        <div class="skill-tags">
+          <span>Impact Evaluation</span>
+          <span>Mixed-Methods Research</span>
+          <span>Cost-Effectiveness Analysis</span>
+          <span>Randomized Controlled Trials</span>
+          <span>Qualitative Research</span>
+          <span>Survey Design</span>
+          <span>Systematic Reviews</span>
+          <span>Literature Reviews</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <h3><span class="dot dot-emerald"></span> Program Management</h3>
+        <div class="skill-tags">
+          <span>Program Design & Operations</span>
+          <span>Monitoring & Evaluation (M&E)</span>
+          <span>Theory of Change</span>
+          <span>Stakeholder Engagement</span>
+          <span>Cross-Institutional Partnerships</span>
+          <span>Grant Management</span>
+          <span>IRB & Regulatory Compliance</span>
+          <span>Data Use Agreements</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <h3><span class="dot dot-amber"></span> Domains</h3>
+        <div class="skill-tags">
+          <span>Global Health</span>
+          <span>Maternal & Child Health</span>
+          <span>Workforce Development</span>
+          <span>Economic Development</span>
+          <span>Social Safety Nets</span>
+          <span>Nutrition</span>
+          <span>Immigration Policy</span>
+          <span>Climate Philanthropy</span>
+          <span>Early Childhood Development</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <h3><span class="dot dot-rose"></span> Technical & Communication</h3>
+        <div class="skill-tags">
+          <span>Risk Analysis</span>
+          <span>Demographic Modeling</span>
+          <span>Data Analysis</span>
+          <span>Landscape Analysis</span>
+          <span>Policy Briefs & Research Briefs</span>
+          <span>Stakeholder Mapping</span>
+          <span>Knowledge Management</span>
+          <span>Strategic Advisory</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── Contact ──────────────────────────────────────────────────── -->
+<section id="contact">
+  <div class="container">
+    <p class="section-label">Contact</p>
+    <h2 class="section-title">Let's connect</h2>
+    <p class="section-desc">
+      I'm open to opportunities in program management, impact evaluation, strategic advisory, and technical assistance. Feel free to reach out.
+    </p>
+    <div class="contact-links">
+      <a class="btn btn-primary" href="mailto:sakshina.b1211@gmail.com">Email Me</a>
+      <a class="btn btn-ghost" href="https://www.linkedin.com/in/sakshina-bhatt-07b81589/" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── Footer ───────────────────────────────────────────────────── -->
+<footer>
+  <p>&copy; 2026 Sakshina Bhatt.</p>
+</footer>
+
+</body>
+</html>
