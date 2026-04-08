@@ -205,8 +205,140 @@
       margin-bottom: 2.5rem;
     }
 
+    /* ── Experience ───────────────────────────────────────────── */
+    #experience { background: var(--white); }
+
+    .work-list {
+      margin-top: 1.5rem;
+      border-top: 1px solid var(--slate-200);
+    }
+
+    .work-item {
+      display: grid;
+      grid-template-columns: 175px 1fr;
+      gap: 2rem;
+      padding: 2.5rem 0;
+      border-bottom: 1px solid var(--slate-200);
+    }
+
+    .work-meta .company {
+      font-family: 'Source Serif 4', 'Georgia', serif;
+      font-size: .72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      color: var(--slate-900);
+      display: block;
+      margin-bottom: .3rem;
+      line-height: 1.35;
+    }
+
+    .work-meta .period {
+      font-size: .78rem;
+      color: var(--slate-500);
+      display: block;
+      line-height: 1.45;
+    }
+
+    .work-meta .location {
+      font-size: .75rem;
+      color: var(--slate-400);
+      display: block;
+      font-style: italic;
+      margin-top: .2rem;
+    }
+
+    .work-details .role-title {
+      font-family: 'Playfair Display', 'Georgia', serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--slate-900);
+      line-height: 1.3;
+      margin-bottom: .35rem;
+    }
+
+    .work-details .role-tagline {
+      font-size: .9rem;
+      color: var(--slate-500);
+      font-style: italic;
+      margin-bottom: .85rem;
+    }
+
+    .work-details p {
+      font-size: .92rem;
+      color: var(--slate-700);
+      line-height: 1.7;
+      margin-bottom: .75rem;
+    }
+
+    .work-details p:last-of-type { margin-bottom: 1rem; }
+
+    .work-details .report-link {
+      display: inline-block;
+      font-size: .85rem;
+      font-weight: 600;
+      color: var(--indigo);
+      border-bottom: 1px solid var(--indigo-l);
+      margin-top: .25rem;
+      margin-bottom: .25rem;
+      text-decoration: none;
+    }
+
+    .work-details .report-link:hover {
+      color: var(--indigo-d);
+      border-bottom-color: var(--indigo-d);
+    }
+
+    .subrole {
+      padding-bottom: 1.5rem;
+      margin-bottom: 1.5rem;
+      border-bottom: 1px dashed var(--slate-200);
+    }
+
+    .subrole:last-child {
+      padding-bottom: 0;
+      margin-bottom: 0;
+      border-bottom: none;
+    }
+
+    .subrole .subrole-period {
+      display: block;
+      font-size: .72rem;
+      font-weight: 600;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--slate-400);
+      margin-bottom: .25rem;
+    }
+
+    .work-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .35rem;
+      margin-top: 1rem;
+    }
+
+    .work-tags span {
+      font-size: .68rem;
+      font-weight: 600;
+      letter-spacing: .03em;
+      padding: .22rem .55rem;
+      border-radius: 4px;
+      background: var(--slate-50);
+      border: 1px solid var(--slate-200);
+      color: var(--slate-700);
+    }
+
+    @media (max-width: 700px) {
+      .work-item {
+        grid-template-columns: 1fr;
+        gap: .75rem;
+        padding: 2rem 0;
+      }
+    }
+
     /* ── Projects ─────────────────────────────────────────────── */
-    #projects { background: var(--white); }
+    #projects { background: var(--slate-50); }
 
     .project-grid {
       display: grid;
@@ -215,7 +347,7 @@
     }
 
     .project-card {
-      background: var(--slate-50);
+      background: var(--white);
       border: 1px solid var(--slate-200);
       border-radius: var(--radius);
       overflow: hidden;
@@ -401,6 +533,7 @@
     <a href="#" class="logo">Sakshina Bhatt<span>.</span></a>
     <div class="nav-links">
       <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
       <a href="#skills">Skills</a>
       <a href="#contact">Contact</a>
     </div>
@@ -458,6 +591,287 @@
             <!-- TODO: Replace # with live URL when deployed -->
             <a href="#">Live Demo &rarr;</a>
             <a href="#">GitHub &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── Experience ───────────────────────────────────────────────── -->
+<section id="experience">
+  <div class="container">
+    <p class="section-label">Experience</p>
+    <h2 class="section-title">Where I've worked</h2>
+
+    <div class="work-list">
+
+      <!-- Stanford University (combined) -->
+      <div class="work-item">
+        <div class="work-meta">
+          <span class="company">Stanford University</span>
+          <span class="period">2023 &ndash; 2026</span>
+          <span class="location">Stanford, CA</span>
+        </div>
+        <div class="work-details">
+
+          <div class="subrole">
+            <span class="subrole-period">2025 &ndash; 2026</span>
+            <h3 class="role-title">Program Manager, Stanford Emergence</h3>
+            <p class="role-tagline">Cross-campus initiative on health equity &amp; climate resilience</p>
+            <p>
+              Managed program operations for Stanford's cross-campus initiative connecting impact investors, social entrepreneurs, and faculty researchers. Designed and executed stakeholder engagement strategy, coordinated program logistics and communications for the Emergence Health Industry Collaborative's launch, and built operational systems for tracking partner engagement and pipeline activity. Served as the primary operational liaison between the founding team and external ecosystem partners.
+            </p>
+            <div class="work-tags">
+              <span>Stakeholder Engagement</span>
+              <span>Program Operations</span>
+              <span>Health Equity</span>
+              <span>Climate Resilience</span>
+            </div>
+          </div>
+
+          <div class="subrole">
+            <span class="subrole-period">2025</span>
+            <h3 class="role-title">Consultant, Institute for Advancing Just Societies</h3>
+            <p class="role-tagline">Strategic concept design for immigrant &amp; refugee integration initiative</p>
+            <p>
+              Developed the strategic concept note for the Institute's inaugural multiyear initiative on immigrant and refugee integration in U.S. cities. Conducted landscape analysis of existing evidence, identified programmatic gaps, and translated research findings into a phased operational roadmap for piloting community-level interventions. Engaged faculty and external stakeholders to refine the initiative's theory of change and measurement framework.
+            </p>
+            <div class="work-tags">
+              <span>Landscape Analysis</span>
+              <span>Theory of Change</span>
+              <span>Immigration Policy</span>
+              <span>Strategic Advisory</span>
+            </div>
+          </div>
+
+          <div class="subrole">
+            <span class="subrole-period">2023 &ndash; 2025</span>
+            <h3 class="role-title">Research Program Manager, Immigration Policy Lab</h3>
+            <p class="role-tagline">NIH-funded record linkage across 30M+ Medicaid claims</p>
+            <p>
+              Led end-to-end program management of a first-of-its-kind NIH-funded initiative (R01MD013844) to design and deploy a record-linking algorithm across 30M+ Medicaid claims spanning 2011&ndash;19, enabling longitudinal tracking of maternal-child health outcomes across multiple states.
+            </p>
+            <p>
+              Managed the full project lifecycle: scoped the technical approach with data scientists, negotiated data use agreements with federal agencies, coordinated with Stanford's IRB and compliance infrastructure, and translated the PIs' research vision into a delivery plan with milestones and timelines. Built cross-institutional partnerships with CMS-adjacent data organizations and other Stanford research centers to identify downstream use cases for the linked datasets.
+            </p>
+            <div class="work-tags">
+              <span>Program Management</span>
+              <span>NIH R01</span>
+              <span>Data Use Agreements</span>
+              <span>IRB Compliance</span>
+              <span>Maternal &amp; Child Health</span>
+              <span>Medicaid</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Sequoia Climate Foundation -->
+      <div class="work-item">
+        <div class="work-meta">
+          <span class="company">Sequoia Climate Foundation</span>
+          <span class="period">2023</span>
+          <span class="location">Irvine, CA</span>
+        </div>
+        <div class="work-details">
+          <h3 class="role-title">Evidence &amp; Learning Researcher</h3>
+          <p class="role-tagline">Grant portfolio synthesis for climate philanthropy</p>
+          <p>
+            Supported the foundation's evidence and learning function by synthesizing grantee performance data and external research to inform strategic decision-making on climate philanthropy investments. Contributed to internal learning products that helped program staff assess the effectiveness of grant portfolios.
+          </p>
+          <div class="work-tags">
+            <span>Evidence Synthesis</span>
+            <span>Grant Portfolio Analysis</span>
+            <span>Climate Philanthropy</span>
+            <span>Knowledge Management</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Third Sector -->
+      <div class="work-item">
+        <div class="work-meta">
+          <span class="company">Third Sector</span>
+          <span class="period">2022 &ndash; 2023</span>
+          <span class="location">San Francisco, CA</span>
+        </div>
+        <div class="work-details">
+          <h3 class="role-title">Associate</h3>
+          <p class="role-tagline">Economic mobility &amp; workforce development for government partners</p>
+          <p>
+            Partnered with government agencies and community organizations to design and evaluate economic mobility programs, with a focus on cash transfers and tools for workforce development. Co-led qualitative research with justice-involved recipients of Alameda County's Returning Home Career Grant to assess program impact on workforce reentry &mdash; producing findings that informed the county's and Rubicon Programs' approach to guaranteed income for disadvantaged populations.
+          </p>
+          <p>
+            Built demographic projection models for six rural Texas counties to support targeted outreach for an ARPA-funded workforce program (Texas Good Jobs Challenge), and synthesized multi-stakeholder input into research briefs and asset maps tailored to different decision-making audiences.
+          </p>
+          <div class="work-tags">
+            <span>Qualitative Research</span>
+            <span>Guaranteed Income</span>
+            <span>Workforce Reentry</span>
+            <span>Demographic Modeling</span>
+            <span>Research Briefs</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- itotheN -->
+      <div class="work-item">
+        <div class="work-meta">
+          <span class="company">itotheN</span>
+          <span class="period">2022</span>
+          <span class="location">Remote</span>
+        </div>
+        <div class="work-details">
+          <h3 class="role-title">Capstone Consultant</h3>
+          <p class="role-tagline">Global ECD funding landscape analysis for impact advisory firm</p>
+          <p>
+            Conducted a systematic review and landscape analysis of global philanthropic investments in Early Childhood Development (ECD) for a leading impact advisory firm. Mapped funding flows, identified gaps in evidence-informed grantmaking, and developed strategic recommendations for scaling ECD investments across low- and middle-income countries.
+          </p>
+          <div class="work-tags">
+            <span>Systematic Review</span>
+            <span>Landscape Analysis</span>
+            <span>Early Childhood Development</span>
+            <span>Philanthropic Strategy</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Evidence Action -->
+      <div class="work-item">
+        <div class="work-meta">
+          <span class="company">Evidence Action</span>
+          <span class="period">2021</span>
+          <span class="location">Berkeley, CA</span>
+        </div>
+        <div class="work-details">
+          <h3 class="role-title">Graduate Intern, Deworm the World Programs</h3>
+          <p class="role-tagline">Market analysis &amp; program reporting for global health NGO</p>
+          <p>
+            Developed a market analysis framework to assess demand for an online toolkit targeting neglected tropical diseases (soil-transmitted helminths and schistosomiasis), informing the team's go-to-market strategy for global health practitioners. Contributed to quarterly program reporting for Nigeria operations, synthesizing field data into narrative updates for the organization's knowledge management system.
+          </p>
+          <div class="work-tags">
+            <span>Market Analysis</span>
+            <span>Global Health</span>
+            <span>Neglected Tropical Diseases</span>
+            <span>Program Reporting</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- World Bank -->
+      <div class="work-item">
+        <div class="work-meta">
+          <span class="company">The World Bank</span>
+          <span class="period">2019 &ndash; 2020</span>
+          <span class="location">Greater Delhi Area</span>
+        </div>
+        <div class="work-details">
+          <h3 class="role-title">Short Term Consultant</h3>
+          <p class="role-tagline">Mixed-methods impact evaluation of India's National Rural Livelihoods Mission</p>
+          <p>
+            Executed a mixed-methods impact evaluation of India's National Rural Livelihoods Mission (NRLM) to assess its effects on women's labor force participation and political engagement in rural Jharkhand. Developed the concept note and literature review, deployed the survey instrument, and conducted interviews with state government officials and self-help group members to map the operational partnerships between the livelihoods programs and women's self-help groups.
+          </p>
+          <a class="report-link" href="https://thedocs.worldbank.org/en/doc/62141abf1152d94953e76c11345c869f-0310022021/related/SARL-India-Final-Report-Final-May22.pdf" target="_blank" rel="noopener">Read the final report &rarr;</a>
+          <div class="work-tags">
+            <span>Impact Evaluation</span>
+            <span>Mixed-Methods Research</span>
+            <span>Survey Design</span>
+            <span>Gender &amp; Livelihoods</span>
+            <span>Government Engagement</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tata Centre for Development (UChicago) -->
+      <div class="work-item">
+        <div class="work-meta">
+          <span class="company">Tata Centre for Development, UChicago</span>
+          <span class="period">2018 &ndash; 2019</span>
+          <span class="location">Greater Delhi Area</span>
+        </div>
+        <div class="work-details">
+          <h3 class="role-title">Consultant</h3>
+          <p class="role-tagline">Multi-city qualitative research on informal settlements</p>
+          <p>
+            Managed multi-city qualitative research across three major Indian cities on quality of life in informal settlements, for a book-length study covering tenure security, land rights, health, intergenerational mobility, and financial inclusion. Designed survey instruments and built data collection partnerships with local NGOs and field teams. Conducted interviews spanning slum residents, urban planners, academics, and senior government officials &mdash; navigating politically sensitive dynamics to surface ground-level realities. Brokered a first-of-its-kind spatial data-sharing agreement with a city government, securing both institutional and community buy-in through sustained relationship-building.
+          </p>
+          <a class="report-link" href="https://tcd.uchicago.edu/projects/quality-of-life-in-indias-slums/" target="_blank" rel="noopener">View the project page &rarr;</a>
+          <div class="work-tags">
+            <span>Qualitative Research</span>
+            <span>Field Operations</span>
+            <span>Urban Development</span>
+            <span>Partnership Building</span>
+            <span>Data-Sharing Agreements</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Centre for Civil Society (Consultant) -->
+      <div class="work-item">
+        <div class="work-meta">
+          <span class="company">Centre for Civil Society</span>
+          <span class="period">2019</span>
+          <span class="location">Greater Delhi Area</span>
+        </div>
+        <div class="work-details">
+          <h3 class="role-title">Consultant</h3>
+          <p class="role-tagline">Policy advocacy toolkit for governance reform</p>
+          <p>
+            Co-developed a policy advocacy toolkit aimed at improving governance processes in India by streamlining procedural rules and strengthening communication between executive agencies. Translated policy research into practitioner-friendly guidance for government reform advocates.
+          </p>
+          <a class="report-link" href="https://ccs.in/tweakbook-governance-reforms" target="_blank" rel="noopener">View the Governance Reforms Tweakbook &rarr;</a>
+          <div class="work-tags">
+            <span>Policy Advocacy</span>
+            <span>Governance Reform</span>
+            <span>Knowledge Translation</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Centre for Civil Society (Researcher) -->
+      <div class="work-item">
+        <div class="work-meta">
+          <span class="company">Centre for Civil Society</span>
+          <span class="period">2018</span>
+          <span class="location">Greater Delhi Area</span>
+        </div>
+        <div class="work-details">
+          <h3 class="role-title">Researcher</h3>
+          <p class="role-tagline">Curriculum development on education economics</p>
+          <p>
+            Developed educational content on the economics of India's education sector for an online course, translating academic research into accessible curriculum for a non-specialist audience.
+          </p>
+          <div class="work-tags">
+            <span>Curriculum Development</span>
+            <span>Education Policy</span>
+            <span>Research Communication</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- J-PAL -->
+      <div class="work-item">
+        <div class="work-meta">
+          <span class="company">J-PAL (Abdul Latif Jameel Poverty Action Lab)</span>
+          <span class="period">2017</span>
+          <span class="location">Gurugram, India</span>
+        </div>
+        <div class="work-details">
+          <h3 class="role-title">Research Associate</h3>
+          <p class="role-tagline">USAID/DFID-funded RCT on labor market matching</p>
+          <p>
+            Managed field operations for a USAID/DFID-funded randomized controlled trial testing a skills assessment intervention to reduce labor market matching frictions, working with 1,000+ job candidates across India. Supervised a team of 15 field enumerators conducting interviews with hiring managers at SMEs. Brokered and managed the partnership with India's largest mobile wallet provider to disburse digital cash incentives to study participants. Designed study recruitment pitches for firms of varying sizes and ran data quality back-checks to maintain research integrity.
+          </p>
+          <a class="report-link" href="https://www.theigc.org/sites/default/files/2021/05/Kelley-et-al-March-2019-Final-report.pdf" target="_blank" rel="noopener">Read the final report &rarr;</a>
+          <div class="work-tags">
+            <span>RCT Field Operations</span>
+            <span>Team Supervision</span>
+            <span>Labor Markets</span>
+            <span>Data Quality</span>
+            <span>Partnership Management</span>
           </div>
         </div>
       </div>
