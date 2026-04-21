@@ -512,6 +512,162 @@
       color: var(--slate-500);
     }
 
+    /* ── 1. Scroll-triggered fade-in ─────────────────────────── */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity .7s cubic-bezier(.22,1,.36,1), transform .7s cubic-bezier(.22,1,.36,1);
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* stagger children inside a section */
+    .fade-in-children > * {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity .5s cubic-bezier(.22,1,.36,1), transform .5s cubic-bezier(.22,1,.36,1);
+    }
+
+    .fade-in-children.visible > * { opacity: 1; transform: translateY(0); }
+    .fade-in-children.visible > *:nth-child(1) { transition-delay: 0s; }
+    .fade-in-children.visible > *:nth-child(2) { transition-delay: .08s; }
+    .fade-in-children.visible > *:nth-child(3) { transition-delay: .16s; }
+    .fade-in-children.visible > *:nth-child(4) { transition-delay: .24s; }
+
+    /* ── 2. Section divider ornament ──────────────────────────── */
+    .section-divider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      padding: .5rem 0;
+    }
+
+    .section-divider::before,
+    .section-divider::after {
+      content: '';
+      flex: 1;
+      max-width: 120px;
+      height: 1px;
+      background: var(--slate-200);
+    }
+
+    .section-divider .ornament {
+      width: 7px;
+      height: 7px;
+      background: var(--indigo-l);
+      transform: rotate(45deg);
+      flex-shrink: 0;
+    }
+
+    /* ── 3. Work item hover accent border ────────────────────── */
+    .work-item {
+      border-left: 3px solid transparent;
+      padding-left: 1.25rem;
+      transition: border-color .3s ease, background .3s ease;
+    }
+
+    .work-item:hover {
+      border-left-color: var(--indigo-l);
+      background: rgba(253, 248, 232, .45);
+    }
+
+    /* ── 4. Hero animated gradient + grain ────────────────────── */
+    @keyframes hero-shimmer {
+      0%   { background-position: 0% 50%; }
+      50%  { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .hero {
+      background: linear-gradient(160deg, #2d2a24, #3a3428, #4a4030, #3a3020, #2d2a24) !important;
+      background-size: 300% 300% !important;
+      animation: hero-shimmer 12s ease infinite;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+      pointer-events: none;
+      opacity: .4;
+    }
+
+    /* ── 5. Active nav indicator ──────────────────────────────── */
+    nav .nav-links a {
+      position: relative;
+      padding-bottom: 4px;
+    }
+
+    nav .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--indigo-l);
+      transition: width .3s ease;
+    }
+
+    nav .nav-links a:hover::after,
+    nav .nav-links a.active::after {
+      width: 100%;
+    }
+
+    /* ── 6. Skill tag hover pop ───────────────────────────────── */
+    .skill-tags span {
+      transition: all .2s ease;
+      cursor: default;
+    }
+
+    .skill-tags span:hover {
+      background: var(--indigo);
+      color: var(--white);
+      border-color: var(--indigo);
+      transform: translateY(-2px);
+      box-shadow: 0 3px 8px rgba(139,105,20,.2);
+    }
+
+    .work-tags span {
+      transition: all .2s ease;
+      cursor: default;
+    }
+
+    .work-tags span:hover {
+      background: var(--indigo-l);
+      color: var(--slate-900);
+      border-color: var(--indigo-l);
+      transform: translateY(-1px);
+    }
+
+    /* ── 7. Gold accent line under section titles ─────────────── */
+    .section-title {
+      position: relative;
+      display: inline-block;
+      padding-bottom: .5rem;
+    }
+
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 48px;
+      height: 3px;
+      background: linear-gradient(90deg, var(--indigo-l), var(--amber));
+      border-radius: 2px;
+    }
+
+    #contact .section-title::after {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
     /* ── Responsive ───────────────────────────────────────────── */
     @media (max-width: 700px) {
       .hero { padding: 8rem 0 4rem; }
@@ -564,12 +720,12 @@
 <!-- ── Projects ─────────────────────────────────────────────────── -->
 <section id="projects">
   <div class="container">
-    <p class="section-label">Projects</p>
-    <h2 class="section-title">Selected work</h2>
-    <p class="section-desc">
+    <p class="section-label fade-in">Projects</p>
+    <h2 class="section-title fade-in">Selected work</h2>
+    <p class="section-desc fade-in">
       Side projects where I build tools that make policy-relevant data more accessible and actionable.
     </p>
-    <div class="project-grid">
+    <div class="project-grid fade-in">
 
       <!-- Project: Workforce Pathways Navigator -->
       <div class="project-card">
@@ -599,11 +755,13 @@
   </div>
 </section>
 
+<div class="container"><div class="section-divider"><span class="ornament"></span></div></div>
+
 <!-- ── Experience ───────────────────────────────────────────────── -->
 <section id="experience">
   <div class="container">
-    <p class="section-label">Experience</p>
-    <h2 class="section-title">Where I've worked</h2>
+    <p class="section-label fade-in">Experience</p>
+    <h2 class="section-title fade-in">Where I've worked</h2>
 
     <div class="work-list">
 
@@ -882,12 +1040,14 @@
   </div>
 </section>
 
+<div class="container"><div class="section-divider"><span class="ornament"></span></div></div>
+
 <!-- ── Skills ───────────────────────────────────────────────────── -->
 <section id="skills">
   <div class="container">
-    <p class="section-label">Skills</p>
-    <h2 class="section-title">Expertise &amp; competencies</h2>
-    <div class="skills-grid">
+    <p class="section-label fade-in">Skills</p>
+    <h2 class="section-title fade-in">Expertise &amp; competencies</h2>
+    <div class="skills-grid fade-in-children">
 
       <div class="skill-group">
         <h3><span class="dot dot-indigo"></span> Research & Evaluation</h3>
@@ -953,8 +1113,8 @@
 <!-- ── Contact ──────────────────────────────────────────────────── -->
 <section id="contact">
   <div class="container">
-    <p class="section-label">Contact</p>
-    <h2 class="section-title">Let's connect</h2>
+    <p class="section-label fade-in">Contact</p>
+    <h2 class="section-title fade-in">Let's connect</h2>
     <p class="section-desc">
       I'm open to opportunities in program management, impact evaluation, strategic advisory, and technical assistance. Feel free to reach out.
     </p>
@@ -969,6 +1129,44 @@
 <footer>
   <p>&copy; 2026 Sakshina Bhatt.</p>
 </footer>
+
+<script>
+  // ── 1. Scroll-triggered fade-in ──────────────────────────────
+  const fadeObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+
+  document.querySelectorAll('.fade-in, .fade-in-children').forEach(el => {
+    fadeObserver.observe(el);
+  });
+
+  // ── 5. Active nav indicator on scroll ────────────────────────
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('nav .nav-links a');
+
+  function updateActiveNav() {
+    let current = '';
+    sections.forEach(section => {
+      const top = section.offsetTop - 120;
+      if (window.scrollY >= top) {
+        current = section.getAttribute('id');
+      }
+    });
+    navLinks.forEach(link => {
+      link.classList.remove('active');
+      if (link.getAttribute('href') === '#' + current) {
+        link.classList.add('active');
+      }
+    });
+  }
+
+  window.addEventListener('scroll', updateActiveNav, { passive: true });
+  updateActiveNav();
+</script>
 
 </body>
 </html>
